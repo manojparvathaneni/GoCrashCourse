@@ -11,7 +11,7 @@ build: vet
 	go build
 
 run: build
-	./main
+	./eliza
 
 test:
 	go test
