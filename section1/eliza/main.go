@@ -26,8 +26,8 @@ func main() {
 		if userInput == "quit" {
 			break
 		}
-		response := doctor.Response(userInput)
-		fmt.Println(response)
+
+		fmt.Println(doctor.Response(userInput))
 	}
 
 }
