@@ -3,20 +3,26 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math/rand"
 	"os"
+	"time"
 )
 
-const prompt = "and Press ENTER when ready"
+const prompt = "and don't type your number in, just Press ENTER when ready"
 
 func main() {
+	// Seed the random number generator
+	source := rand.NewSource(time.Now().UnixNano())
+	random := rand.New(source)
 
-	firstNumber := 2
-	secondNumber := 5
-	subtract := 7
-	var answer int
+	// Generate random numbers
+	firstNumber := random.Intn(8) + 2  // Range: 2-9
+	secondNumber := random.Intn(8) + 2 // Range: 2-9
+	subtract := random.Intn(8) + 2     // Range: 2-9
 
 	reader := bufio.NewReader(os.Stdin)
 
+	// Game instructions
 	fmt.Println("Guess the number game.")
 	fmt.Println("----------------------")
 	fmt.Println()
@@ -27,7 +33,7 @@ func main() {
 	fmt.Println("Multiply your number by", firstNumber, prompt)
 	reader.ReadString('\n')
 
-	fmt.Println("Now Multiply the result by", secondNumber, prompt)
+	fmt.Println("Now multiply the result by", secondNumber, prompt)
 	reader.ReadString('\n')
 
 	fmt.Println("Divide the result by the number you originally thought of", prompt)
@@ -36,6 +42,7 @@ func main() {
 	fmt.Println("Now subtract", subtract, prompt)
 	reader.ReadString('\n')
 
-	answer = firstNumber*secondNumber - subtract
+	// Calculate the predicted answer based on the sequence of operations
+	answer := firstNumber*secondNumber - subtract
 	fmt.Println("The answer is", answer)
 }
