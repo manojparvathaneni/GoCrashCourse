@@ -37,7 +37,7 @@ func main() {
 	fmt.Println("Q - Quit the program")
 
 	for {
-		char, _, err := keyboard.GetKey()
+		char, _, err := keyboard.GetSingleKey()
 		if err != nil {
 			log.Fatal(err)
 		}
