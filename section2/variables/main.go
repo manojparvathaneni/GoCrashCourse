@@ -19,6 +19,12 @@ func main() {
 	firstNumber := random.Intn(8) + 2  // Range: 2-9
 	secondNumber := random.Intn(8) + 2 // Range: 2-9
 	subtract := random.Intn(8) + 2     // Range: 2-9
+	answer := firstNumber*secondNumber - subtract
+
+	playTheGame(firstNumber, secondNumber, subtract, answer)
+}
+
+func playTheGame(firstNumber, secondNumber, subtract, answer int) {
 
 	reader := bufio.NewReader(os.Stdin)
 
@@ -43,6 +49,6 @@ func main() {
 	reader.ReadString('\n')
 
 	// Calculate the predicted answer based on the sequence of operations
-	answer := firstNumber*secondNumber - subtract
+
 	fmt.Println("The answer is", answer)
 }
