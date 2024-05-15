@@ -2,24 +2,18 @@ package main
 
 import (
 	"fmt"
-	"log"
-
-	"github.com/eiannone/keyboard"
+	"hammer-bitcoin/game"
 )
 
 func main() {
 
-	err := keyboard.Open()
-	if err != nil {
-		log.Fatal(err)
+	playAgain := true
+
+	for playAgain {
+		game.Play()
+		playAgain = game.GetYesOrNo("Would you like to play again (y/n)?")
 	}
-
-	defer func() {
-		_ = keyboard.Close()
-	}()
-
-	char, _, _ := keyboard.GetSingleKey()
-	//i , _ := strconv.Atoi(string(char))
-	fmt.Println(string(char))
+	fmt.Println("")
+	fmt.Println("Goodbye.")
 
 }
