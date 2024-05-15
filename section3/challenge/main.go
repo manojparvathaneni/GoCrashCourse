@@ -29,7 +29,7 @@ func main() {
 	user.UserName = readString("What is your name?")
 	user.Age = readInt("How old are you?")
 	user.FavoriteNumber = readFloat("What is your favorite number?")
-	user.OwnsADog = readBool("Do you own a Dog?")
+	user.OwnsADog = readBool("Do you own a Dog? (y/n)")
 
 	fmt.Printf("Your name is %s. You are %d years old. Your favorite number is %.2f. Owns a dog: %t\n",
 		user.UserName,
