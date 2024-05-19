@@ -6,7 +6,6 @@ import (
 
 // basic types(numbers, strings, booleans)
 var myInt int
-
 var myUint uint
 
 var myFloat float32
@@ -23,9 +22,7 @@ func main() {
 	fmt.Println(myInt, myUint, myFloat, myFloat64)
 
 	myString := "Manoj"
-
 	fmt.Println(myString)
-
 	myString = "Cooper" //strings are immutable in Go- this creates a new string.
 
 	myBool := true
